@@ -14,6 +14,16 @@ during post day is THE DAY(00:00 ~ 23:59)
 
 3.
 
-4.
+4. Login process
+get id, password
+if (id,password) == (database)
+        login sucess
+        goto mainview
+else
+        error message return
+        -> sign up prosess
+        
+
+
 
 5.
