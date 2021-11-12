@@ -1,0 +1,19 @@
+1. mainview
+1-1. 
+post cate -> A(todayknow), B(normalcate) // A=B
+regist_post() 
+//post is five
+during post day is THE DAY(00:00 ~ 23:59)
+        if postgood>=20
+          post cate A -> todayknow
+1-2.
+
+1-3.
+
+2.
+
+3.
+
+4.
+
+5.
