@@ -1,3 +1,4 @@
+(user)
 1. mainview
 1-1. 
 post cate -> A(todayknow), B(normalcate) // A=B
@@ -36,6 +37,13 @@ if (id,password) == (database)
 else
         error message return
         -> sign up prosess
+
+(site owner)
+1.
+게시판 관리
+카테고리 관리
+결정
+
 
 //한국어
 1. 메인화면
