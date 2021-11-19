@@ -1,1 +1,8 @@
 참고자료 구동 안 됨
+
+{import cmn.ConnectionMaker;
+import cmn.JDBCReturnReso;
+import cmn.SearchVO;
+import cmn.WorkDiv;}
+--> 문제코드
+cmn.DTO 파일은 참고자료를 작성한 블로그에 올라와있지만 그 외 cmn.~~~ 파일은 존재하지 않음
