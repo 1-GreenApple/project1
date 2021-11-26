@@ -11,12 +11,12 @@ public class BbsDAO {
 	private Connection conn;
 	private ResultSet rs;
 	
-	//±âº» »ý¼ºÀÚ
+	//ï¿½âº» ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public BbsDAO() {
 		try {
 			String dbURL = "jdbc:mariadb://localhost:3306/bbs";
 			String dbID = "root";
-			String dbPassword = "001025";
+			String dbPassword = "4019";
 			Class.forName("org.mariadb.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 		}catch (Exception e) {
@@ -24,7 +24,7 @@ public class BbsDAO {
 		}
 	}
 
-	//ÀÛ¼ºÀÏÀÚ ¸Þ¼Òµå
+	//ï¿½Û¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼Òµï¿½
 	public String getDate() {
 		String sql = "select now()";
 		try {
@@ -36,12 +36,12 @@ public class BbsDAO {
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
-		return ""; //µ¥ÀÌÅÍº£ÀÌ½º ¿À·ù
+		return ""; //ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	}
 	
-	//°Ô½Ã±Û ¹øÈ£ ºÎ¿© ¸Þ¼Òµå
+	//ï¿½Ô½Ã±ï¿½ ï¿½ï¿½È£ ï¿½Î¿ï¿½ ï¿½Þ¼Òµï¿½
 	public int getNext() {
-		//ÇöÀç °Ô½Ã±ÛÀ» ³»¸²Â÷¼øÀ¸·Î Á¶È¸ÇÏ¿© °¡Àå ¸¶Áö¸· ±ÛÀÇ ¹øÈ£¸¦ ±¸ÇÑ´Ù
+		//ï¿½ï¿½ï¿½ï¿½ ï¿½Ô½Ã±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£ï¿½ï¿½ ï¿½ï¿½ï¿½Ñ´ï¿½
 		String sql = "select bbsID from bbs order by bbsID desc";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -49,14 +49,14 @@ public class BbsDAO {
 			if(rs.next()) {
 				return rs.getInt(1) + 1;
 			}
-			return 1; //Ã¹ ¹øÂ° °Ô½Ã¹°ÀÎ °æ¿ì
+			return 1; //Ã¹ ï¿½ï¿½Â° ï¿½Ô½Ã¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -1; //µ¥ÀÌÅÍº£ÀÌ½º ¿À·ù
+		return -1; //ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	}
 	
-	//±Û¾²±â ¸Þ¼Òµå
+	//ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½Þ¼Òµï¿½
 	public int write(String bbsTitle, String userID, String bbsContent) {
 		String sql = "insert into bbs values(?, ?, ?, ?, ?, ?)";
 		try {
@@ -66,15 +66,15 @@ public class BbsDAO {
 			pstmt.setString(3, userID);
 			pstmt.setString(4, getDate());
 			pstmt.setString(5, bbsContent);
-			pstmt.setInt(6, 1); //±ÛÀÇ À¯È¿¹øÈ£
+			pstmt.setInt(6, 1); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¿ï¿½ï¿½È£
 			return pstmt.executeUpdate();
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -1; //µ¥ÀÌÅÍº£ÀÌ½º ¿À·ù
+		return -1; //ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	}
 	
-	//°Ô½Ã±Û ¸®½ºÆ® ¸Þ¼Òµå
+	//ï¿½Ô½Ã±ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Þ¼Òµï¿½
 	public ArrayList<Bbs> getList(int pageNumber){
 		String sql = "select * from bbs where bbsID < ? and bbsAvailable = 1 order by bbsID desc limit 10";
 		ArrayList<Bbs> list = new ArrayList<Bbs>();
@@ -98,7 +98,7 @@ public class BbsDAO {
 		return list;
 	}
 	
-	//ÆäÀÌÂ¡ Ã³¸® ¸Þ¼Òµå
+	//ï¿½ï¿½ï¿½ï¿½Â¡ Ã³ï¿½ï¿½ ï¿½Þ¼Òµï¿½
 	public boolean nextPage(int pageNumber) {
 		String sql = "select * from bbs where bbsID < ? and bbsAvailable = 1";
 		try {
@@ -114,7 +114,7 @@ public class BbsDAO {
 		return false;
 	}
 	
-	//ÇÏ³ªÀÇ °Ô½Ã±ÛÀ» º¸´Â ¸Þ¼Òµå
+	//ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½Ô½Ã±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼Òµï¿½
 	public Bbs getBbs(int bbsID) {
 		String sql = "select * from bbs where bbsID = ?";
 		try {
@@ -137,7 +137,7 @@ public class BbsDAO {
 		return null;
 	}
 	
-	//°Ô½Ã±Û ¼öÁ¤ ¸Þ¼Òµå
+	//ï¿½Ô½Ã±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼Òµï¿½
 	public int update(int bbsID, String bbsTitle, String bbsContent) {
 		String sql = "update bbs set bbsTitle = ?, bbsContent = ? where bbsID = ?";
 		try {
@@ -149,12 +149,12 @@ public class BbsDAO {
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -1; //µ¥ÀÌÅÍº£ÀÌ½º ¿À·ù
+		return -1; //ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	}
 	
-	//°Ô½Ã±Û »èÁ¦ ¸Þ¼Òµå
+	//ï¿½Ô½Ã±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼Òµï¿½
 	public int delete(int bbsID) {
-		//½ÇÁ¦ µ¥ÀÌÅÍ¸¦ »èÁ¦ÇÏ´Â °ÍÀÌ ¾Æ´Ï¶ó °Ô½Ã±Û À¯È¿¼ýÀÚ¸¦ '0'À¸·Î ¼öÁ¤ÇÑ´Ù
+		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Ï¶ï¿½ ï¿½Ô½Ã±ï¿½ ï¿½ï¿½È¿ï¿½ï¿½ï¿½Ú¸ï¿½ '0'ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½
 		String sql = "update bbs set bbsAvailable = 0 where bbsID = ?";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -163,7 +163,7 @@ public class BbsDAO {
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -1; //µ¥ÀÌÅÍº£ÀÌ½º ¿À·ù 
+		return -1; //ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
 	}
 	
 }
