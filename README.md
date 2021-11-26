@@ -7,7 +7,7 @@
 -> JSP 사용
 
 참고 3 -https://bskyvision.com/1005
- - db password change
+ - db password change to 4019
 
 오류 참고
 https://downloads.mariadb.com/Connectors/java/connector-java-2.6.2/
