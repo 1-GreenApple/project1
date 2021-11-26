@@ -7,42 +7,42 @@ import java.sql.ResultSet;
 
 public class UserDAO {
 	
-	private Connection conn; //ÀÚ¹Ù¿Í µ¥ÀÌÅÍº£ÀÌ½º¸¦ ¿¬°á
-	private PreparedStatement pstmt; //Äõ¸®¹® ´ë±â ¹× ¼³Á¤
-	private ResultSet rs; //°á°ú°ª ¹Þ¾Æ¿À±â
+	private Connection conn; //ï¿½Ú¹Ù¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	private PreparedStatement pstmt; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	private ResultSet rs; //ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¿ï¿½ï¿½ï¿½
 	
-	//±âº» »ý¼ºÀÚ
-	//UserDAO°¡ ½ÇÇàµÇ¸é ÀÚµ¿À¸·Î »ý¼ºµÇ´Â ºÎºÐ
-	//¸Þ¼Òµå¸¶´Ù ¹Ýº¹µÇ´Â ÄÚµå¸¦ ÀÌ°÷¿¡ ³ÖÀ¸¸é ÄÚµå°¡ °£¼ÒÈ­µÈ´Ù
+	//ï¿½âº» ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	//UserDAOï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¸ï¿½ ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ ï¿½Îºï¿½
+	//ï¿½Þ¼Òµå¸¶ï¿½ï¿½ ï¿½Ýºï¿½ï¿½Ç´ï¿½ ï¿½Úµå¸¦ ï¿½Ì°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Úµå°¡ ï¿½ï¿½ï¿½ï¿½È­ï¿½È´ï¿½
 	public UserDAO() {
 		try {
 			String dbURL = "jdbc:mariadb://localhost:3306/bbs";
 			String dbID = "root";
-			String dbPassword = "001025";
+			String dbPassword = "4019";
 			Class.forName("org.mariadb.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	//·Î±×ÀÎ ¿µ¿ª
+	//ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public int login(String userID, String userPassword) {
 			String sql = "select userPassword from user where userID = ?";
 			try {
-				pstmt = conn.prepareStatement(sql); //sqlÄõ¸®¹®À» ´ë±â ½ÃÅ²´Ù
-				pstmt.setString(1, userID); //Ã¹¹øÂ° '?'¿¡ ¸Å°³º¯¼ö·Î ¹Þ¾Æ¿Â 'userID'¸¦ ´ëÀÔ
-				rs = pstmt.executeQuery(); //Äõ¸®¸¦ ½ÇÇàÇÑ °á°ú¸¦ rs¿¡ ÀúÀå
+				pstmt = conn.prepareStatement(sql); //sqlï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Å²ï¿½ï¿½
+				pstmt.setString(1, userID); //Ã¹ï¿½ï¿½Â° '?'ï¿½ï¿½ ï¿½Å°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¿ï¿½ 'userID'ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+				rs = pstmt.executeQuery(); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ rsï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				if(rs.next()) {
 					if(rs.getString(1).equals(userPassword)) {
-						return 1; //·Î±×ÀÎ ¼º°ø
+						return 1; //ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 					}else
-						return 0; //ºñ¹Ð¹øÈ£ Æ²¸²
+						return 0; //ï¿½ï¿½Ð¹ï¿½È£ Æ²ï¿½ï¿½
 				}
-				return -1; //¾ÆÀÌµð ¾øÀ½
+				return -1; //ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½
 			}catch (Exception e) {
 				e.printStackTrace();
 			}
-			return -2; //¿À·ù
+			return -2; //ï¿½ï¿½ï¿½ï¿½
 		}
 	public int join(User user) {
 			  String sql = "insert into user values(?, ?, ?, ?, ?)";
