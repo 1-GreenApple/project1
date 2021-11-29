@@ -4,6 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<!-- 폰트 수정을 위해 작성한 'css' 파일을 참조하는 링크 -->
+<link rel="stylesheet" href="css/custom.css">
 <!-- 화면 최적화 -->
 <meta name="viewport" content="width-device-width", initial-scale="1">
 <!-- 루트 폴더에 부트스트랩을 참조하는 링크 -->
