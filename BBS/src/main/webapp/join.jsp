@@ -11,6 +11,28 @@
 <!-- 루트 폴더에 부트스트랩을 참조하는 링크 -->
 <link rel="stylesheet" href="css/bootstrap.css">
 <title>BBS</title>
+	    <!-- semantic.min.css 가져오기 -->
+    <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
+ 
+    <style type="text/css">
+        body {
+            background-color: #F2F9F2;
+        }
+        body>.grid {
+            height: 100%;
+        }
+        .image {
+            margin-top: -100px;
+        }
+        .column {
+            max-width: 1000px;
+        }
+        .view_btn {
+            cursor: pointer;
+        }
+ 
+    </style>
+
 </head>
 <body>
 	<nav class="navbar navbar-default"> <!-- 네비게이션 -->

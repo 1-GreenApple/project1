@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="css/bootstrap.css">
 <title>BBS</title>
 	    <!-- semantic.min.css 가져오기 -->
-    <link rel="stylesheet" type="text/css" href="/coco/resources/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
  
     <style type="text/css">
         body {

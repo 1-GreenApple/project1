@@ -14,7 +14,7 @@
 	<!-- 폰트 수정을 위해 작성한 'css' 파일을 참조하는 링크 -->
 	<link rel="stylesheet" href="css/custom.css">
 	    <!-- semantic.min.css 가져오기 -->
-    <link rel="stylesheet" type="text/css" href="/coco/resources/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
  
     <style type="text/css">
         body {
@@ -111,7 +111,7 @@
 			<div class="container">
 				<h1>Life Recipe</h1>
 				<p>잊고 지내던 세상의 모든 지식</p>
-				<a class="btn btn-primary btn-pull" href="#" role="button">자세히 알아보기</a>
+				<a class="btn btn-primary btn-pull" href="#" role="button">오늘의 상식 알아보기!</a>
 			</div>
 		</div>
 	</div>
