@@ -2,15 +2,17 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
 <!-- 폰트 수정을 위해 작성한 'css' 파일을 참조하는 링크 -->
 <link rel="stylesheet" href="css/custom.css">
 <!-- 화면 최적화 -->
 <meta name="viewport" content="width-device-width", initial-scale="1">
+
 <!-- 루트 폴더에 부트스트랩을 참조하는 링크 -->
 <link rel="stylesheet" href="css/bootstrap.css">
-<title>JSP 게시판 웹 사이트</title>
+<title>Life Recipe</title>
 </head>
 <body>
 	<%
@@ -32,7 +34,7 @@
 				<span class="icon-bar"></span>
 			</button>
 			<!-- 상단 바에 제목이 나타나고 클릭하면 main 페이지로 이동한다 -->
-			<a class="navbar-brand" href="main.jsp">JSP 게시판 웹 사이트</a>
+			<a class="navbar-brand" href="main.jsp">Life Recipe</a>
 		</div>
 		<!-- 게시판 제목 이름 옆에 나타나는 메뉴 영역 -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

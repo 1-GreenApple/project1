@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>JSP 게시판 웹 사이트</title>
+<title>Life Recipe</title>
 </head>
 <body>
 	<%
@@ -34,19 +34,19 @@
 			session.setAttribute("userID", user.getUserID());
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('로그인 성공')");
+			script.println("alert('로그인 성공!')");
 			script.println("location.href='main.jsp'");
 			script.println("</script>");
 		}else if(result == 0){
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('비밀번호가 틀립니다')");
+			script.println("alert('비밀번호가 틀립니다.')");
 			script.println("history.back()");
 			script.println("</script>");
 		}else if(result == -1){
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
-			script.println("alert('존재하지 않는 아이디입니다')");
+			script.println("alert('존재하지 않는 아이디입니다.')");
 			script.println("history.back()");
 			script.println("</script>");
 		}else if(result == -2){

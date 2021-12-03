@@ -1,17 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+    
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<!-- 화면 최적화 -->
-<meta name="viewport" content="width-device-width", initial-scale="1">
-<!-- 루트 폴더에 부트스트랩을 참조하는 링크 -->
-<link rel="stylesheet" href="css/bootstrap.css">
-<!-- 폰트 수정을 위해 작성한 'css' 파일을 참조하는 링크 -->
-<link rel="stylesheet" href="css/custom.css">
-<title>JSP 게시판 웹 사이트</title>
+	<meta charset="UTF-8">
+	<!-- 화면 최적화 -->
+	<meta name="viewport" content="width-device-width", initial-scale="1">
+	<!-- title : Life Recipe -->
+	<title>Life Recipe</title>
+	<!-- 루트 폴더에 부트스트랩을 참조하는 링크 -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- 폰트 수정을 위해 작성한 'css' 파일을 참조하는 링크 -->
+	<link rel="stylesheet" href="css/custom.css">
 </head>
+
+
 <body>
 	<%
 		// 메인 페이지로 이동했을 때 세션에 값이 담겨있는지 체크
