@@ -13,6 +13,28 @@
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<!-- 폰트 수정을 위해 작성한 'css' 파일을 참조하는 링크 -->
 	<link rel="stylesheet" href="css/custom.css">
+	    <!-- semantic.min.css 가져오기 -->
+    <link rel="stylesheet" type="text/css" href="/coco/resources/semantic.min.css">
+ 
+    <style type="text/css">
+        body {
+            background-color: #F2F9F2;
+        }
+        body>.grid {
+            height: 100%;
+        }
+        .image {
+            margin-top: -100px;
+        }
+        .column {
+            max-width: 1000px;
+        }
+        .view_btn {
+            cursor: pointer;
+        }
+ 
+    </style>
+
 </head>
 
 
